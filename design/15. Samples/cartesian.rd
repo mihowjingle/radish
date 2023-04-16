@@ -1,15 +1,15 @@
-type Couple<some A, some B> {
+type Couple some A, B {
     first: A
     second: B
 }
 
-cartesian = (first: Array<some A>, second: Array<some B>) -> Array<Couple<A, B>> {
-    acc = List<Couple<A, B>>()
-    for a in first {
-        for b in second {
+cartesian = (first: Array<some X>, second: Array<some Y>) -> Array<Couple<X, Y>> {
+    acc = List<Couple<X, Y>>()
+    for x in first {
+        for y in second {
             acc.append(Couple {
-                first = a
-                second = b
+                first = x
+                second = y
             })
         }
     }

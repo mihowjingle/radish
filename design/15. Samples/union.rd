@@ -1,9 +1,9 @@
 from radish.iterables.collections.set import Set ; I don't know, something like that, just making this look like a real example
-from radish.iterables.collections.mutable.set import MutableSet
+from radish.iterables.collections.mutable.set import HashSet ; or some other implementation, anyway, mutable
 from radish.data.comparison import Equatable
 
 union = [I of Equatable[I]] (one: Set[I], another: Set[I]) -> Set[I] { ; I for item
-    buffer = MutableSet.new()
+    buffer = HashSet.new()
     for item in one {
         buffer.add(item)
     }
@@ -22,3 +22,11 @@ union = [I of Equatable[I]] (one: Set[I], another: Set[I]) -> Set[I] { ; I for i
 ; (Equatable is (to me) "narrower" than Comparable, which would probably extend Equatable and add greaterThan, etc.)
 
 ; btw, data types are automatically Equatable
+
+; btw 2: what if we didn't require that I be Equatable? instead, all sets would require a function in their constructors,
+; for equality, or even - in the case of sorted sets - comparator function?
+
+; todo:
+; write intersection, difference, and "outer difference", whatever it's called, distinct, maybe?
+; (symmetric difference apparently, but isn't that a mouthful)
+; how about simply "unique"

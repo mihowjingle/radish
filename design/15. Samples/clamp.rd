@@ -10,7 +10,7 @@ clamp: Number, Number, Number -> Number = (input, min, max) {
 ; some indentation to enhance readability would probably be "soft-recommended", so to speak, up to you
 
 safeClamp = (input: Number, a: Number, b: Number) -> Number { ; todo: better names?
-    min = if a < b then a else b ; experimental syntax for if-expression/ternary operator todo: update 7.1.
+    min = if a < b then a else b ; experimental syntax for if-expression/ternary operator
     max = if a > b then a else b
     return when {
         input > max then max

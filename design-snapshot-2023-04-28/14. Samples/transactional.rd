@@ -1,7 +1,7 @@
-transactional = (readOnly: Boolean = False, action: None -> some R) -> R {
+transactional = [R] (readOnly: Boolean = False, action: Transaction -> R) -> R {
     transaction = startTransaction()
     try {
-        result = action()
+        result = action(transaction)
         transaction.commit()
         return result
     } rescue e: SomeCustomError {
@@ -11,7 +11,7 @@ transactional = (readOnly: Boolean = False, action: None -> some R) -> R {
 }
 
 root = () {
-    count = transactional(readOnly = True, action = {
-        runSql("select count(*) from users")
+    count = transactional(readOnly = True, action = (transaction) {
+        return transaction.query("select count(*) from users")
     })
 }

@@ -1,10 +1,10 @@
-type Couple some A, B {
+type Couple[A, B] {
     first: A
     second: B
 }
 
-cartesian = (first: Array<some X>, second: Array<some Y>) -> Array<Couple<X, Y>> {
-    acc = List<Couple<X, Y>>()
+cartesian = [X, Y] (first: Array[X], second: Array[Y]) -> Array[Couple[X, Y]] {
+    acc = MutableList[Couple[X, Y]]()
     for x in first {
         for y in second {
             acc.append(Couple {
@@ -13,5 +13,5 @@ cartesian = (first: Array<some X>, second: Array<some Y>) -> Array<Couple<X, Y>>
             })
         }
     }
-    acc.toArray()
+    return acc.toArray()
 }

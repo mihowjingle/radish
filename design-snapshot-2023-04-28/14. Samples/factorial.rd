@@ -14,7 +14,7 @@ unsafeFactorial = (x: Integer) -> Integer {
 
 ;;;;;;;;;;;;;;;;;;; recursive, safe
 
-value NegativeFactorialArgument
+unit NegativeFactorialArgument
 
 safeFactorial = (x: Integer) -> Integer | NegativeFactorialArgument {
     if x < 0 {
@@ -28,6 +28,8 @@ safeFactorial = (x: Integer) -> Integer | NegativeFactorialArgument {
 
 ;;;;;;;;;;;;;;;;;;; iterative, unsafe
 
+error NegativeFactorialArgument
+
 unsafeIterativeFactorial = (x: Integer) -> Integer {
     if x < 0 {
         panic NegativeFactorialArgument
@@ -38,3 +40,5 @@ unsafeIterativeFactorial = (x: Integer) -> Integer {
     }
     return accumulator
 }
+
+; see 4.4. for tail-optimized factorial

@@ -1,5 +1,5 @@
 ; Should we panic when times < 0? Nothing will happen anyway... But we probably should, clearly not what we intended.
-; Or... this is just another reason to introduce signed/unsigned numbers.
+; Or... this is just another reason to introduce signed/unsigned numbers. <- Yes.
 
 repeat = (times: Integer, action: Integer -> None) {
     with current = 0 while current < times {

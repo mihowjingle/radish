@@ -7,10 +7,7 @@ anyMatch = infix [E] (elements: Iterable[E], predicate: E -> Boolean) -> Boolean
     return False
 }
 
-; depending on what ends up as the ignored type parameter keyword: List[any], this could be just 'any', not 'anyMatch'
-; the options are 'any', 'some' and '_'
-
-; anyway (surprise, surprise):
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 isOdd = (i: Integer) { i % 2 == 0 }
 

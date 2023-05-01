@@ -10,7 +10,7 @@ repeat = (times: Integer, action: Integer -> None) {
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-root = () {
+root = (_) { ; ignored parameter, or just use the 01 form
     repeat(times = 3, action = (_) {
         write("Hello there!")
     })

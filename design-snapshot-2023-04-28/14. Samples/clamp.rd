@@ -10,7 +10,7 @@ clamp: Number, Number, Number -> Number = (input, min, max) {
 ; some indentation to enhance readability, like above, would probably be "soft-recommended", so to speak, up to you
 
 safeClamp = (input: Number, a: Number, b: Number) -> Number {
-    min = if a < b then a else b ; experimental syntax for if-expression/ternary operator
+    min = if a < b then a else b
     max = if a > b then a else b
     return when {
         input > max then max

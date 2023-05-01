@@ -10,7 +10,7 @@ transactional = (readOnly: Boolean = False, action: None -> some R) -> R {
     }
 }
 
-root = () {
+root = {
     count = transactional(readOnly = True, action = {
         runSql("select count(*) from users")
     })

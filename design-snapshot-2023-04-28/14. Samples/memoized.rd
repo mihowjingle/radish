@@ -1,12 +1,12 @@
-memoized = [T, R] (function: T -> R) -> (T -> R) {
-    cache = MutableMap[T, R]()
-    return (t: T) -> R {
-        maybeResult = cache.get(t)
+memoized = [I of Equatable[I], O] (function: I -> O) -> (I -> O) {
+    cache: MutableMap[I, O] = MutableMap.new()
+    return (input: I) -> O {
+        maybeResult = cache.get(input)
         if maybeResult =/= None {
             return maybeResult
         } else {
-            result = function(t)
-            cache.put(t, result)
+            result = function(input)
+            cache.put(input, result)
             return result
         }
     }

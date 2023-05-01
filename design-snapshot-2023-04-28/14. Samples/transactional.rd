@@ -10,7 +10,7 @@ transactional = [R] (readOnly: Boolean = False, action: Transaction -> R) -> R {
     }
 }
 
-root = () {
+root = {
     count = transactional(readOnly = True, action = (transaction) {
         return transaction.query("select count(*) from users")
     })

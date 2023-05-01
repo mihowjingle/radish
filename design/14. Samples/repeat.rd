@@ -10,7 +10,7 @@ repeat = (times: Integer, action: Integer -> None) {
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-root = () {
+root = {
     repeat(times = 3, action = (_) {
         write("Hello there!")
     })

@@ -4,7 +4,7 @@ type Couple[A, B] {
 }
 
 cartesian = [X, Y] (first: Array[X], second: Array[Y]) -> Array[Couple[X, Y]] {
-    acc = MutableList[Couple[X, Y]]()
+    acc = MutableList[Couple[X, Y]].new()
     for x in first {
         for y in second {
             acc.append(Couple {

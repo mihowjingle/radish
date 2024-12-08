@@ -12,7 +12,7 @@ anyMatch = infix [E] (elements: Iterable[E], predicate: E -> Boolean) -> Boolean
 
 ; anyway (surprise, surprise):
 
-isOdd = (i: Integer) { i % 2 == 0 }
+isOdd = (i: Integer) { i % 2 == 1 }
 
 set(1, 3, 5).anyMatch((x) { x < 0 })    ; False
 list(1, 2, 3).anyMatch(isOdd)           ; True

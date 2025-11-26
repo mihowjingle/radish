@@ -12,6 +12,14 @@ unsafeFactorial = (x: Integer) -> Integer {
     return x * self(x - 1)
 }
 
+unsafeFactorial = (x: Integer) -> Integer {
+    return when {
+        x < 0   then panic NegativeFactorialArgument
+        x == 0  then 1
+        else    x * self(x - 1)
+    }
+}
+
 ;;;;;;;;;;;;;;;;;;; recursive, safe
 
 value NegativeFactorialArgument

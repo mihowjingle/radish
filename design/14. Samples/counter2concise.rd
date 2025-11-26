@@ -20,7 +20,7 @@ slot Counter {
         }
     }
 
-    readonly { ; or... 'getters' or 'readers' or.... 'type'?
+    readonly { ; or... 'getters' or 'readers' or.... 'type'? or export, but probably not, because mutations are also public
         currentValue = () {
             return this.currentValue
         }

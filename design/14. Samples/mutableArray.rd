@@ -1,4 +1,4 @@
-slot MutableArray any A of Array[A] {
+slot MutableArray any A of Array[A] { ; 2025-11-25 <- this syntax is impossible any A extends Array[A]? no, MutableArray[A] extends Array[A]
 
     this {
         ; this would have to be like "internal", or some plug like that,
@@ -18,7 +18,7 @@ slot MutableArray any A of Array[A] {
     mutations {
         ; resize? or is the whole point of a MutableArray, when we already have List, that List is resizeable, and MutableArray is not?
 
-        set: Integer, A -> None (index, value) {
+        set: Integer, A -> None = (index, value) {
             ; and again, internal, but self-explanatory
         }
     }
